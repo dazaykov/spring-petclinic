@@ -10,5 +10,6 @@ node {
     archiveArtifacts 'target/*.jar'
     emailext body: 'qqqqqqqqqqq', subject: '[Jenkins] Build', to: 'd.a.zaykov@yandex.ru'
   }
+
 }
 
