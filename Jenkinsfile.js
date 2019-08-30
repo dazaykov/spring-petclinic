@@ -11,7 +11,7 @@ node {
     try {
         emailext body: 'qqqqqqqqqqq', subject: '[Jenkins] Build', to: 'd.a.zaykov@yandex.ru'
     }
-    catch (Throable e) {
+    catch (Throwable e) {
         echo "Не могу отправить почту: "
     }
   }
