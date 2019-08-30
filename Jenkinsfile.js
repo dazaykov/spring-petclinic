@@ -8,7 +8,12 @@ node {
   stage('Results') {
     junit '**/target/surefire-reports/TEST-*.xml'
     archiveArtifacts 'target/*.jar'
-    emailext body: 'qqqqqqqqqqq', subject: '[Jenkins] Build', to: 'd.a.zaykov@yandex.ru'
+    try {
+        emailext body: 'qqqqqqqqqqq', subject: '[Jenkins] Build', to: 'd.a.zaykov@yandex.ru'
+    }
+    catch (Throable e) {
+        echo "Не могу отправить почту: "
+    }
   }
 }
 
